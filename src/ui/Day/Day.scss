@@ -1,0 +1,36 @@
+.day {
+  $block: '.day';
+
+  background: rgba(0,0,0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  &__summary {
+  background: rgba(0,0,0, 0.25);
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 20px 1fr 1fr;
+  }
+
+  &__summary-item {
+
+  }
+
+  &__events {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__event {
+    > &+& {
+    margin-top: 10px;
+    }
+  }
+
+  &[open] {
+    > #{$block}__summary {
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  }
+}

@@ -1,0 +1,36 @@
+.course {
+
+   &__item {
+     & + & {
+       margin-top: 1rem;
+     }
+   }
+
+
+  &__title {
+    margin: 0;
+    word-break: break-word;
+  }
+
+  &__header {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  &__total {
+    margin: 0;
+  }
+}
+
+.days {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    &+& {
+      margin-top: 20px;
+    }
+  }
+}
