@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.7d0ed668.css",
-    "main.js": "/static/js/main.e4d9445f.js",
-    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
-    "index.html": "/index.html",
-    "main.7d0ed668.css.map": "/static/css/main.7d0ed668.css.map",
-    "main.e4d9445f.js.map": "/static/js/main.e4d9445f.js.map",
-    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/argazi-calc/static/css/main.7d0ed668.css",
+    "main.js": "/argazi-calc/static/js/main.2082bc38.js",
+    "static/js/787.f4599c14.chunk.js": "/argazi-calc/static/js/787.f4599c14.chunk.js",
+    "index.html": "/argazi-calc/index.html",
+    "main.7d0ed668.css.map": "/argazi-calc/static/css/main.7d0ed668.css.map",
+    "main.2082bc38.js.map": "/argazi-calc/static/js/main.2082bc38.js.map",
+    "787.f4599c14.chunk.js.map": "/argazi-calc/static/js/787.f4599c14.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7d0ed668.css",
-    "static/js/main.e4d9445f.js"
+    "static/js/main.2082bc38.js"
   ]
 }
