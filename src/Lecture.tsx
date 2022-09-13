@@ -35,7 +35,7 @@ export function Lecture(props: {
           )}
         </div>
         <div>
-          {props.lecture.date.toLocaleString(undefined, {
+          {props.lecture.date.toLocaleString([...window.navigator.languages], {
             timeStyle: "short",
           })}
         </div>

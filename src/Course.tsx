@@ -21,7 +21,7 @@ export function Course(props: { course: CI.CourseInfo }) {
       </div>
       <div className="course__item">
         <h3 className={"course__date"}>
-          {props.course.from.toLocaleString("ru-RU", {
+          {props.course.from.toLocaleString([...window.navigator.languages], {
             day: "numeric",
             month: "short",
             year: "2-digit",
@@ -29,7 +29,7 @@ export function Course(props: { course: CI.CourseInfo }) {
           })}
         </h3>
         <h3 className={"course__date"}>
-          {props.course.to.toLocaleString("ru-RU", {
+          {props.course.to.toLocaleString([...window.navigator.languages], {
             day: "numeric",
             month: "short",
             year: "2-digit",

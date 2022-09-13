@@ -18,7 +18,7 @@ export function Eating(props: {
         <Money money={props.eating.price} />
       </div>
       <div>
-        {props.eating.date.toLocaleString(undefined, {
+        {props.eating.date.toLocaleString([...window.navigator.languages], {
           timeStyle: "short",
         })}
       </div>

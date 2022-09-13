@@ -47,7 +47,7 @@ export function Day(props: DayProps) {
           )}
         </div>
         <div className={"day__date"}>
-          {props.day.date.toLocaleString(undefined, {
+          {props.day.date.toLocaleString([...window.navigator.languages], {
             day: "numeric",
             weekday: "short",
             month: "short",
