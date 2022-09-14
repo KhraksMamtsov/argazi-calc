@@ -1,8 +1,8 @@
 import * as EI from "./EatingInfo";
 import * as LI from "./LectureInfo";
-import { Price } from "./Price";
+import * as Price from "./Price";
 import * as P from "./Person";
-import { Tariff } from "./Tariff";
+import * as Tariff from "./Tariff";
 import { pipe } from "fp-ts/lib/function";
 import * as RA from "fp-ts/ReadonlyArray";
 import * as C from "./Calculating";
@@ -15,11 +15,11 @@ export type DayInfo = Readonly<{
   enabled: boolean;
   eating: ReadonlyArray<EI.EatingInfo>;
   lectures: ReadonlyArray<LI.LectureInfo>;
-  price: Price;
+  price: Price.Price;
 }>;
 
 type CalculateArgs = Readonly<{
-  tariff: Tariff;
+  tariff: Tariff.Tariff;
   person: P.Person;
   day: DayInfo;
 }>;
@@ -47,37 +47,23 @@ export function calculateTotal(args: CalculateArgs) {
   const eatingTotalPrice = calculateEatingTotal(args);
   const lecturesTotalPrice = calculateLectureTotal(args);
 
+  const eatingLecturesAndDay = pipe(
+    [
+      //
+      C.value(day.price[tariff.type]),
+      eatingTotalPrice,
+      lecturesTotalPrice,
+    ],
+    C.sum
+  );
+
   return pipe(
     person,
     P.match({
-      [P.PersonType.USUAL]: () =>
-        pipe(
-          [
-            C.value(day.price[tariff.type]),
-            eatingTotalPrice,
-            lecturesTotalPrice,
-          ],
-          C.sum
-        ),
+      [P.PersonType.USUAL]: () => eatingLecturesAndDay,
+      [P.PersonType.PENSIONER]: () => eatingLecturesAndDay,
+      [P.PersonType.STUDENT]: () => eatingLecturesAndDay,
       [P.PersonType.CHILDREN]: () => pipe(day.price[tariff.type], C.value),
-      [P.PersonType.PENSIONER]: () =>
-        pipe(
-          [
-            C.value(day.price[tariff.type]),
-            eatingTotalPrice,
-            lecturesTotalPrice,
-          ],
-          C.sum
-        ),
-      [P.PersonType.STUDENT]: () =>
-        pipe(
-          [
-            C.value(day.price[tariff.type]),
-            eatingTotalPrice,
-            lecturesTotalPrice,
-          ],
-          C.sum
-        ),
     })
   );
 }
