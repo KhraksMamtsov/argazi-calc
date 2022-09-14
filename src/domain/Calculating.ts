@@ -35,15 +35,15 @@ export const sum = (summands: ReadonlyArray<Calculating>): Sum => ({
 
 type Div = Readonly<{
   type: ExpressionType.DIV;
-  a: Calculating;
-  b: number;
+  divisible: Calculating;
+  divisor: number;
 }>;
 export const div =
-  (b: number) =>
-  (a: Calculating): Div => ({
+  (divisor: number) =>
+  (divisible: Calculating): Div => ({
     type: ExpressionType.DIV,
-    a,
-    b,
+    divisible,
+    divisor,
   });
 
 export type Calculating = Value | Sum | Div;
@@ -61,7 +61,8 @@ export const calculate = (expr: Calculating): Money.Money =>
             (acc, cur) => pipe(acc, Money.sum(calculate(cur))),
             Money.zero()
           ),
-        [ExpressionType.DIV]: (x) => pipe(calculate(x.a), Money.div(x.b)),
+        [ExpressionType.DIV]: (x) =>
+          pipe(calculate(x.divisible), Money.div(x.divisor)),
       })
     )
   );
@@ -71,7 +72,8 @@ const optimize = (expr: Calculating): O.Option<Calculating> =>
     expr,
     match({
       [ExpressionType.VALUE]: (x) => O.some(x),
-      [ExpressionType.DIV]: (x) => pipe(optimize(x.a), O.map(div(x.b))),
+      [ExpressionType.DIV]: (x) =>
+        pipe(optimize(x.divisible), O.map(div(x.divisor))),
       [ExpressionType.SUM]: (x) =>
         pipe(
           x.summands,
@@ -93,7 +95,7 @@ export const show = (expr: Calculating): string =>
         [ExpressionType.VALUE]: (x) => Money.show(x.value),
         [ExpressionType.SUM]: ({ summands }) =>
           `(${summands.map((x) => show(x)).join(" + ")})`,
-        [ExpressionType.DIV]: (x) => `(${show(x.a)} / ${x.b})`,
+        [ExpressionType.DIV]: (x) => `(${show(x.divisible)} / ${x.divisor})`,
       })
     )
   );
