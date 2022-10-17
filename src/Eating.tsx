@@ -2,9 +2,11 @@ import * as EI from "./domain/EatingInfo";
 import { CheckBox } from "./CheckBox";
 import React from "react";
 import { Money } from "./ui/Money/Money";
+import * as P from "./domain/Person";
 
 export function Eating(props: {
   eating: EI.EatingInfo;
+  person: P.Person;
   onChange: (enabled: boolean) => void;
 }) {
   return (
@@ -15,7 +17,7 @@ export function Eating(props: {
 
       <div>{props.eating.name}</div>
       <div>
-        <Money money={props.eating.price} />
+        <Money money={props.eating.price[props.person.type]} />
       </div>
       <div>
         {props.eating.date.toLocaleString([...window.navigator.languages], {

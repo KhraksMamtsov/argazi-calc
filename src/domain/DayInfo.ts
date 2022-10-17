@@ -7,6 +7,7 @@ import { pipe } from "fp-ts/lib/function";
 import * as RA from "fp-ts/ReadonlyArray";
 import * as C from "./Calculating";
 import { Temporal } from "@js-temporal/polyfill";
+import * as Money from "./Money";
 
 export type DayInfo = Readonly<{
   __typename: "DayInfo";
@@ -63,7 +64,25 @@ export function calculateTotal(args: CalculateArgs) {
       [P.PersonType.USUAL]: () => eatingLecturesAndDay,
       [P.PersonType.PENSIONER]: () => eatingLecturesAndDay,
       [P.PersonType.STUDENT]: () => eatingLecturesAndDay,
-      [P.PersonType.CHILDREN]: () => pipe(day.price[tariff.type], C.value),
+      [P.PersonType.CHILDREN_BEFORE_3]: () =>
+        pipe(
+          [C.value(Money.zero()), eatingTotalPrice, lecturesTotalPrice],
+          C.sum
+        ),
+      [P.PersonType.CHILDREN_FROM_3_TO_7]: () =>
+        pipe(
+          C.value(day.price[tariff.type]),
+          C.div(2),
+          (x) => [x, eatingTotalPrice, lecturesTotalPrice],
+          C.sum
+        ),
+      [P.PersonType.CHILDREN_FROM_7_TO_18]: () =>
+        pipe(
+          C.value(day.price[tariff.type]),
+          C.div(2),
+          (x) => [x, eatingTotalPrice, lecturesTotalPrice],
+          C.sum
+        ),
     })
   );
 }

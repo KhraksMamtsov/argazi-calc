@@ -1,5 +1,5 @@
 import { Money } from "./Money";
-import { Tariff } from "./Tariff";
+import { Tariff, TariffType } from "./Tariff";
 import * as P from "./Person";
 import * as Calc from "./Calculating";
 import { pipe } from "fp-ts/lib/function";
@@ -11,7 +11,7 @@ export type LectureInfo = Readonly<{
   date: Temporal.PlainDateTime;
   id: string;
   name: string;
-  price: Money;
+  price: Readonly<Record<TariffType, Money>>;
 }>;
 
 type CalculateArgs = Readonly<{
@@ -26,10 +26,10 @@ export const calculateTotal = (args: CalculateArgs) =>
     P.match.P(
       {
         [P.PersonType.PENSIONER]: () =>
-          pipe(Calc.value(args.lecture.price), Calc.div(2)),
+          pipe(Calc.value(args.lecture.price[args.tariff.type]), Calc.div(2)),
         [P.PersonType.STUDENT]: () =>
-          pipe(Calc.value(args.lecture.price), Calc.div(2)),
+          pipe(Calc.value(args.lecture.price[args.tariff.type]), Calc.div(2)),
       },
-      () => Calc.value(args.lecture.price)
+      () => Calc.value(args.lecture.price[args.tariff.type])
     )
   );

@@ -64,6 +64,7 @@ export function Day(props: DayProps) {
                 match({
                   EatingInfo: (e) => (
                     <Eating
+                      person={props.person}
                       eating={e}
                       onChange={(enabled) =>
                         $.toggleEating({

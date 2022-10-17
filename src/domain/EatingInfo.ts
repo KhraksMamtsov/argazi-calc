@@ -10,7 +10,7 @@ export type EatingInfo = Readonly<{
   enabled: boolean;
   date: Temporal.PlainDateTime;
   name: string;
-  price: Money;
+  price: Readonly<Record<P.PersonType, Money>>;
 }>;
 
 type CalculateArgs = Readonly<{
@@ -19,4 +19,5 @@ type CalculateArgs = Readonly<{
   eating: EatingInfo;
 }>;
 
-export const calculateTotal = (args: CalculateArgs) => value(args.eating.price);
+export const calculateTotal = (args: CalculateArgs) =>
+  value(args.eating.price[args.person.type]);
