@@ -21,7 +21,7 @@ type DayProps = Readonly<{
 
 export function Day(props: DayProps) {
   return (
-    <details className={"day"}>
+    <details className={"day"} open>
       <summary className={"day__summary"}>
         <div className={"day__toggle"}>
           <CheckBox
