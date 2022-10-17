@@ -42,7 +42,7 @@ export const defaultState: CI.CourseInfo = {
             day: 4,
             hour: 8,
           }),
-          enabled: true,
+          enabled: false,
           name: "Завтрак",
           price: {
             [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(10000),
@@ -62,7 +62,7 @@ export const defaultState: CI.CourseInfo = {
             day: 4,
             hour: 14,
           }),
-          enabled: true,
+          enabled: false,
           name: "Oбед",
           price: {
             [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(15000),
@@ -82,7 +82,7 @@ export const defaultState: CI.CourseInfo = {
             day: 4,
             hour: 19,
           }),
-          enabled: true,
+          enabled: false,
           name: "Ужин",
           price: {
             [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(10000),
@@ -103,7 +103,7 @@ export const defaultState: CI.CourseInfo = {
             month: 11,
             day: 4,
           }),
-          enabled: true,
+          enabled: false,
           name: "Организационный взнос",
           price: {
             [Tariff.BookingType]: Money.fromNumber(30000),
@@ -135,7 +135,7 @@ export const defaultState: CI.CourseInfo = {
             day: 5,
             hour: 8,
           }),
-          enabled: true,
+          enabled: false,
           name: "Завтрак",
           price: {
             [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(10000),
@@ -155,7 +155,7 @@ export const defaultState: CI.CourseInfo = {
             day: 5,
             hour: 14,
           }),
-          enabled: true,
+          enabled: false,
           name: "Oбед",
           price: {
             [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(15000),
@@ -175,7 +175,7 @@ export const defaultState: CI.CourseInfo = {
             day: 5,
             hour: 19,
           }),
-          enabled: true,
+          enabled: false,
           name: "Ужин",
           price: {
             [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(10000),
@@ -196,7 +196,7 @@ export const defaultState: CI.CourseInfo = {
             month: 11,
             day: 5,
           }),
-          enabled: true,
+          enabled: false,
           name: "Организационный взнос",
           price: {
             [Tariff.BookingType]: Money.fromNumber(30000),
@@ -229,7 +229,7 @@ export const defaultState: CI.CourseInfo = {
             day: 6,
             hour: 8,
           }),
-          enabled: true,
+          enabled: false,
           name: "Завтрак",
           price: {
             [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(10000),
@@ -249,7 +249,7 @@ export const defaultState: CI.CourseInfo = {
             day: 6,
             hour: 14,
           }),
-          enabled: true,
+          enabled: false,
           name: "Oбед",
           price: {
             [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(15000),
@@ -269,7 +269,7 @@ export const defaultState: CI.CourseInfo = {
             day: 6,
             hour: 19,
           }),
-          enabled: true,
+          enabled: false,
           name: "Ужин",
           price: {
             [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(10000),
