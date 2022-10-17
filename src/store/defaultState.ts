@@ -5,7 +5,7 @@ import * as P from "../domain/Person";
 import { Temporal } from "@js-temporal/polyfill";
 
 export const defaultState: CI.CourseInfo = {
-  name: "Курс N",
+  name: "Нёндро с Моникой Лаупер",
   person: P.usual(),
   tariff: Tariff.inPlace(),
   from: Temporal.PlainDate.from({
