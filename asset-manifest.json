@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/argazi-calc/static/css/main.a69c2d35.css",
+    "main.css": "/argazi-calc/static/css/main.aaada15d.css",
     "main.js": "/argazi-calc/static/js/main.14feff1b.js",
     "static/js/787.f4599c14.chunk.js": "/argazi-calc/static/js/787.f4599c14.chunk.js",
     "index.html": "/argazi-calc/index.html",
-    "main.a69c2d35.css.map": "/argazi-calc/static/css/main.a69c2d35.css.map",
+    "main.aaada15d.css.map": "/argazi-calc/static/css/main.aaada15d.css.map",
     "main.14feff1b.js.map": "/argazi-calc/static/js/main.14feff1b.js.map",
     "787.f4599c14.chunk.js.map": "/argazi-calc/static/js/787.f4599c14.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a69c2d35.css",
+    "static/css/main.aaada15d.css",
     "static/js/main.14feff1b.js"
   ]
 }
