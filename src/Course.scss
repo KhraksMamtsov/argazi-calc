@@ -13,9 +13,12 @@
   }
 
   &__header {
-    display: flex;
+    display: grid;
     gap: 20px;
-    flex-wrap: wrap;
+
+    @media (min-width: 560px) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   &__total {
