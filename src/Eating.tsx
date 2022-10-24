@@ -4,13 +4,15 @@ import React from "react";
 import { Money } from "./ui/Money/Money";
 import * as P from "./domain/Person";
 
+import "./Eating.scss";
+
 export function Eating(props: {
   eating: EI.EatingInfo;
   person: P.Person;
   onChange: (enabled: boolean) => void;
 }) {
   return (
-    <div style={{ display: "flex", gap: "20px" }}>
+    <div className={"eating"}>
       <div>
         <CheckBox state={props.eating.enabled} onChange={props.onChange} />
       </div>

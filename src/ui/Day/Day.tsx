@@ -23,35 +23,42 @@ export function Day(props: DayProps) {
   return (
     <details className={"day"} open>
       <summary className={"day__summary"}>
-        <div className={"day__toggle"}>
-          <CheckBox
-            state={props.day.enabled}
-            onChange={(enabled) =>
-              $.toggleDay({
-                dayId: props.day.id,
-                enabled,
-              })
-            }
-          />
-        </div>
+        <div className={"day__summary-inner"}>
+          <div className={"day__toggle"}>
+            <CheckBox
+              state={props.day.enabled}
+              onChange={(enabled) =>
+                $.toggleDay({
+                  dayId: props.day.id,
+                  enabled,
+                })
+              }
+            />
+          </div>
 
-        <div className={"day__total-amount"}>
-          {pipe(
-            DI.calculateTotal({
-              ...props,
-            }),
-            Calc.calculate,
-            (x) => (
-              <Money money={x} />
-            )
-          )}
-        </div>
-        <div className={"day__date"}>
-          {props.day.date.toLocaleString([...window.navigator.languages], {
-            day: "numeric",
-            weekday: "short",
-            month: "short",
-          })}
+          <div className={"day__total-amount"}>
+            Итого за день:{" "}
+            {pipe(
+              DI.calculateTotal({
+                ...props,
+              }),
+              Calc.calculate,
+              (x) => (
+                <Money money={x} />
+              )
+            )}
+          </div>
+          <div className={"day__date"}>
+            Пребывание в РЦ:{" "}
+            <Money money={props.day.price[props.tariff.type]} />
+          </div>
+          <div className={"day__date"}>
+            {props.day.date.toLocaleString([...window.navigator.languages], {
+              day: "numeric",
+              weekday: "short",
+              month: "short",
+            })}
+          </div>
         </div>
       </summary>
       <ul className={"day__events"}>

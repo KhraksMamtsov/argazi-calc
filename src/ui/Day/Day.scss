@@ -6,9 +6,11 @@
 
   &__summary {
   background: rgba(0,0,0, 0.25);
+  }
+  &__summary-inner {
     display: grid;
     gap: 20px;
-    grid-template-columns: 20px 1fr 1fr;
+    grid-template-columns: 50px 1fr 1fr 1fr;
   }
 
   &__summary-item {

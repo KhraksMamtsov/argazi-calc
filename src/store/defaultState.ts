@@ -7,7 +7,7 @@ import { Temporal } from "@js-temporal/polyfill";
 export const defaultState: CI.CourseInfo = {
   name: "Нёндро с Моникой Лаупер",
   person: P.usual(),
-  tariff: Tariff.inPlace(),
+  tariff: Tariff.booking(),
   from: Temporal.PlainDate.from({
     year: 2022,
     month: 11,
@@ -104,7 +104,7 @@ export const defaultState: CI.CourseInfo = {
             day: 4,
           }),
           enabled: false,
-          name: "Организационный взнос",
+          name: "Участие в Дхарма-программе",
           price: {
             [Tariff.BookingType]: Money.fromNumber(30000),
             [Tariff.InPlaceType]: Money.fromNumber(60000),
@@ -197,7 +197,7 @@ export const defaultState: CI.CourseInfo = {
             day: 5,
           }),
           enabled: false,
-          name: "Организационный взнос",
+          name: "Участие в Дхарма-программе",
           price: {
             [Tariff.BookingType]: Money.fromNumber(30000),
             [Tariff.InPlaceType]: Money.fromNumber(60000),
@@ -291,7 +291,7 @@ export const defaultState: CI.CourseInfo = {
             day: 6,
           }),
           enabled: false,
-          name: "Организационный взнос",
+          name: "Участие в Дхарма-программе",
           price: {
             [Tariff.BookingType]: Money.fromNumber(30000),
             [Tariff.InPlaceType]: Money.fromNumber(60000),

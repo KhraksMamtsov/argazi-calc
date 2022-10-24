@@ -15,9 +15,9 @@ export type InPlace = ReturnType<typeof inPlace>;
 export type Booking = ReturnType<typeof booking>;
 
 export type Tariff = InPlace | Booking;
+const viewFrom: Readonly<Record<TariffType, string>> = {
+  "in-place": "На месте",
+  booking: "Предоплата",
+};
 
-export const toView = (t: Tariff) =>
-  ({
-    "in-place": "На месте",
-    booking: "Бронь",
-  }[t.type]);
+export const toView = (t: Tariff) => viewFrom[t.type];
