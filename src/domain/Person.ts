@@ -33,12 +33,12 @@ export type Student = ReturnType<typeof student>;
 export type Person = typeof All[number];
 
 export const All = [
+  usual(),
+  pensioner(),
+  student(),
   childrenBefore3(),
   childrenFrom3To7(),
   childrenFrom7To18(),
-  pensioner(),
-  usual(),
-  student(),
 ] as const;
 
 export const match = matchOn(DISCRIMINANT);
