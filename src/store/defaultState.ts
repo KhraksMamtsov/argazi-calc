@@ -95,21 +95,21 @@ export const defaultState: CI.CourseInfo = {
         },
       ],
       lectures: [
-        {
-          __typename: "LectureInfo",
-          id: "lecture-1",
-          date: Temporal.PlainDateTime.from({
-            year: 2023,
-            month: 2,
-            day: 20,
-          }),
-          enabled: false,
-          name: "Участие в Дхарма-программе",
-          price: {
-            [Tariff.BookingType]: Money.fromNumber(30000),
-            [Tariff.InPlaceType]: Money.fromNumber(60000),
-          },
-        },
+        // {
+        //   __typename: "LectureInfo",
+        //   id: "lecture-1",
+        //   date: Temporal.PlainDateTime.from({
+        //     year: 2023,
+        //     month: 2,
+        //     day: 20,
+        //   }),
+        //   enabled: false,
+        //   name: "Участие в Дхарма-программе",
+        //   price: {
+        //     [Tariff.BookingType]: Money.fromNumber(30000),
+        //     [Tariff.InPlaceType]: Money.fromNumber(60000),
+        //   },
+        // },
       ],
     },
     {
@@ -188,21 +188,21 @@ export const defaultState: CI.CourseInfo = {
         },
       ],
       lectures: [
-        {
-          __typename: "LectureInfo",
-          id: "lecture-1",
-          date: Temporal.PlainDateTime.from({
-            year: 2023,
-            month: 2,
-            day: 21,
-          }),
-          enabled: false,
-          name: "Участие в Дхарма-программе",
-          price: {
-            [Tariff.BookingType]: Money.fromNumber(30000),
-            [Tariff.InPlaceType]: Money.fromNumber(60000),
-          },
-        },
+        // {
+        //   __typename: "LectureInfo",
+        //   id: "lecture-1",
+        //   date: Temporal.PlainDateTime.from({
+        //     year: 2023,
+        //     month: 2,
+        //     day: 21,
+        //   }),
+        //   enabled: false,
+        //   name: "Участие в Дхарма-программе",
+        //   price: {
+        //     [Tariff.BookingType]: Money.fromNumber(30000),
+        //     [Tariff.InPlaceType]: Money.fromNumber(60000),
+        //   },
+        // },
       ],
     },
 
@@ -282,21 +282,21 @@ export const defaultState: CI.CourseInfo = {
         },
       ],
       lectures: [
-        {
-          __typename: "LectureInfo",
-          id: "lecture-1",
-          date: Temporal.PlainDateTime.from({
-            year: 2023,
-            month: 2,
-            day: 22,
-          }),
-          enabled: false,
-          name: "Участие в Дхарма-программе",
-          price: {
-            [Tariff.BookingType]: Money.fromNumber(30000),
-            [Tariff.InPlaceType]: Money.fromNumber(60000),
-          },
-        },
+        // {
+        //   __typename: "LectureInfo",
+        //   id: "lecture-1",
+        //   date: Temporal.PlainDateTime.from({
+        //     year: 2023,
+        //     month: 2,
+        //     day: 22,
+        //   }),
+        //   enabled: false,
+        //   name: "Участие в Дхарма-программе",
+        //   price: {
+        //     [Tariff.BookingType]: Money.fromNumber(30000),
+        //     [Tariff.InPlaceType]: Money.fromNumber(60000),
+        //   },
+        // },
       ],
     },
     {
@@ -375,21 +375,21 @@ export const defaultState: CI.CourseInfo = {
         },
       ],
       lectures: [
-        {
-          __typename: "LectureInfo",
-          id: "lecture-1",
-          date: Temporal.PlainDateTime.from({
-            year: 2023,
-            month: 2,
-            day: 23,
-          }),
-          enabled: false,
-          name: "Участие в Дхарма-программе",
-          price: {
-            [Tariff.BookingType]: Money.fromNumber(30000),
-            [Tariff.InPlaceType]: Money.fromNumber(60000),
-          },
-        },
+        // {
+        //   __typename: "LectureInfo",
+        //   id: "lecture-1",
+        //   date: Temporal.PlainDateTime.from({
+        //     year: 2023,
+        //     month: 2,
+        //     day: 23,
+        //   }),
+        //   enabled: false,
+        //   name: "Участие в Дхарма-программе",
+        //   price: {
+        //     [Tariff.BookingType]: Money.fromNumber(30000),
+        //     [Tariff.InPlaceType]: Money.fromNumber(60000),
+        //   },
+        // },
       ],
     },
     {
@@ -468,21 +468,21 @@ export const defaultState: CI.CourseInfo = {
         },
       ],
       lectures: [
-        {
-          __typename: "LectureInfo",
-          id: "lecture-1",
-          date: Temporal.PlainDateTime.from({
-            year: 2023,
-            month: 2,
-            day: 24,
-          }),
-          enabled: false,
-          name: "Участие в Дхарма-программе",
-          price: {
-            [Tariff.BookingType]: Money.fromNumber(30000),
-            [Tariff.InPlaceType]: Money.fromNumber(60000),
-          },
-        },
+        // {
+        //   __typename: "LectureInfo",
+        //   id: "lecture-1",
+        //   date: Temporal.PlainDateTime.from({
+        //     year: 2023,
+        //     month: 2,
+        //     day: 24,
+        //   }),
+        //   enabled: false,
+        //   name: "Участие в Дхарма-программе",
+        //   price: {
+        //     [Tariff.BookingType]: Money.fromNumber(30000),
+        //     [Tariff.InPlaceType]: Money.fromNumber(60000),
+        //   },
+        // },
       ],
     },
   ],
