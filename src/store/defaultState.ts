@@ -5,27 +5,27 @@ import * as P from "../domain/Person";
 import { Temporal } from "@js-temporal/polyfill";
 
 export const defaultState: CI.CourseInfo = {
-  name: "Курс с Григорием Серебряным",
+  name: "Курс Нёндро",
   person: P.usual(),
   tariff: Tariff.booking(),
   from: Temporal.PlainDate.from({
-    year: 2022,
-    month: 12,
-    day: 31,
+    year: 2023,
+    month: 2,
+    day: 20,
   }),
   to: Temporal.PlainDate.from({
     year: 2023,
-    month: 1,
-    day: 2,
+    month: 2,
+    day: 24,
   }),
   days: [
     {
       __typename: "DayInfo",
       id: "day-1",
       date: Temporal.PlainDate.from({
-        year: 2022,
-        month: 12,
-        day: 31,
+        year: 2023,
+        month: 2,
+        day: 20,
       }),
       enabled: false,
       price: {
@@ -37,9 +37,9 @@ export const defaultState: CI.CourseInfo = {
           __typename: "EatingInfo",
           id: "eating-1",
           date: Temporal.PlainDateTime.from({
-            year: 2022,
-            month: 12,
-            day: 31,
+            year: 2023,
+            month: 2,
+            day: 20,
             hour: 8,
           }),
           enabled: false,
@@ -57,9 +57,9 @@ export const defaultState: CI.CourseInfo = {
           __typename: "EatingInfo",
           id: "eating-2",
           date: Temporal.PlainDateTime.from({
-            year: 2022,
-            month: 12,
-            day: 31,
+            year: 2023,
+            month: 2,
+            day: 20,
             hour: 14,
           }),
           enabled: false,
@@ -77,9 +77,9 @@ export const defaultState: CI.CourseInfo = {
           __typename: "EatingInfo",
           id: "eating-3",
           date: Temporal.PlainDateTime.from({
-            year: 2022,
-            month: 12,
-            day: 31,
+            year: 2023,
+            month: 2,
+            day: 20,
             hour: 19,
           }),
           enabled: false,
@@ -99,9 +99,9 @@ export const defaultState: CI.CourseInfo = {
           __typename: "LectureInfo",
           id: "lecture-1",
           date: Temporal.PlainDateTime.from({
-            year: 2022,
-            month: 12,
-            day: 31,
+            year: 2023,
+            month: 2,
+            day: 20,
           }),
           enabled: false,
           name: "Участие в Дхарма-программе",
@@ -118,8 +118,8 @@ export const defaultState: CI.CourseInfo = {
       enabled: false,
       date: Temporal.PlainDate.from({
         year: 2023,
-        month: 1,
-        day: 1,
+        month: 2,
+        day: 21,
       }),
       price: {
         [Tariff.BookingType]: Money.fromNumber(20000),
@@ -131,8 +131,8 @@ export const defaultState: CI.CourseInfo = {
           id: "eating-1",
           date: Temporal.PlainDateTime.from({
             year: 2023,
-            month: 1,
-            day: 1,
+            month: 2,
+            day: 21,
             hour: 8,
           }),
           enabled: false,
@@ -151,8 +151,8 @@ export const defaultState: CI.CourseInfo = {
           id: "eating-2",
           date: Temporal.PlainDateTime.from({
             year: 2023,
-            month: 1,
-            day: 1,
+            month: 2,
+            day: 21,
             hour: 14,
           }),
           enabled: false,
@@ -171,8 +171,8 @@ export const defaultState: CI.CourseInfo = {
           id: "eating-3",
           date: Temporal.PlainDateTime.from({
             year: 2023,
-            month: 1,
-            day: 1,
+            month: 2,
+            day: 21,
             hour: 19,
           }),
           enabled: false,
@@ -193,8 +193,8 @@ export const defaultState: CI.CourseInfo = {
           id: "lecture-1",
           date: Temporal.PlainDateTime.from({
             year: 2023,
-            month: 1,
-            day: 1,
+            month: 2,
+            day: 21,
           }),
           enabled: false,
           name: "Участие в Дхарма-программе",
@@ -211,8 +211,8 @@ export const defaultState: CI.CourseInfo = {
       id: "day-3",
       date: Temporal.PlainDate.from({
         year: 2023,
-        month: 1,
-        day: 2,
+        month: 2,
+        day: 22,
       }),
       enabled: false,
       price: {
@@ -225,8 +225,8 @@ export const defaultState: CI.CourseInfo = {
           id: "eating-1",
           date: Temporal.PlainDateTime.from({
             year: 2023,
-            month: 1,
-            day: 2,
+            month: 2,
+            day: 22,
             hour: 8,
           }),
           enabled: false,
@@ -245,8 +245,8 @@ export const defaultState: CI.CourseInfo = {
           id: "eating-2",
           date: Temporal.PlainDateTime.from({
             year: 2023,
-            month: 1,
-            day: 2,
+            month: 2,
+            day: 22,
             hour: 14,
           }),
           enabled: false,
@@ -265,8 +265,8 @@ export const defaultState: CI.CourseInfo = {
           id: "eating-3",
           date: Temporal.PlainDateTime.from({
             year: 2023,
-            month: 1,
-            day: 2,
+            month: 2,
+            day: 22,
             hour: 19,
           }),
           enabled: false,
@@ -287,8 +287,194 @@ export const defaultState: CI.CourseInfo = {
           id: "lecture-1",
           date: Temporal.PlainDateTime.from({
             year: 2023,
-            month: 1,
-            day: 2,
+            month: 2,
+            day: 22,
+          }),
+          enabled: false,
+          name: "Участие в Дхарма-программе",
+          price: {
+            [Tariff.BookingType]: Money.fromNumber(30000),
+            [Tariff.InPlaceType]: Money.fromNumber(60000),
+          },
+        },
+      ],
+    },
+    {
+      __typename: "DayInfo",
+      id: "day-4",
+      date: Temporal.PlainDate.from({
+        year: 2023,
+        month: 2,
+        day: 23,
+      }),
+      enabled: false,
+      price: {
+        [Tariff.BookingType]: Money.fromNumber(20000),
+        [Tariff.InPlaceType]: Money.fromNumber(20000),
+      },
+      eating: [
+        {
+          __typename: "EatingInfo",
+          id: "eating-1",
+          date: Temporal.PlainDateTime.from({
+            year: 2023,
+            month: 2,
+            day: 23,
+            hour: 8,
+          }),
+          enabled: false,
+          name: "Завтрак",
+          price: {
+            [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(10000),
+            [P.PersonType.CHILDREN_FROM_3_TO_7]: Money.fromNumber(10000),
+            [P.PersonType.CHILDREN_FROM_7_TO_18]: Money.fromNumber(15000),
+            [P.PersonType.STUDENT]: Money.fromNumber(15000),
+            [P.PersonType.USUAL]: Money.fromNumber(15000),
+            [P.PersonType.PENSIONER]: Money.fromNumber(15000),
+          },
+        },
+        {
+          __typename: "EatingInfo",
+          id: "eating-2",
+          date: Temporal.PlainDateTime.from({
+            year: 2023,
+            month: 2,
+            day: 23,
+            hour: 14,
+          }),
+          enabled: false,
+          name: "Oбед",
+          price: {
+            [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(15000),
+            [P.PersonType.CHILDREN_FROM_3_TO_7]: Money.fromNumber(15000),
+            [P.PersonType.CHILDREN_FROM_7_TO_18]: Money.fromNumber(30000),
+            [P.PersonType.STUDENT]: Money.fromNumber(30000),
+            [P.PersonType.USUAL]: Money.fromNumber(30000),
+            [P.PersonType.PENSIONER]: Money.fromNumber(30000),
+          },
+        },
+        {
+          __typename: "EatingInfo",
+          id: "eating-3",
+          date: Temporal.PlainDateTime.from({
+            year: 2023,
+            month: 2,
+            day: 23,
+            hour: 19,
+          }),
+          enabled: false,
+          name: "Ужин",
+          price: {
+            [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(10000),
+            [P.PersonType.CHILDREN_FROM_3_TO_7]: Money.fromNumber(10000),
+            [P.PersonType.CHILDREN_FROM_7_TO_18]: Money.fromNumber(25000),
+            [P.PersonType.STUDENT]: Money.fromNumber(25000),
+            [P.PersonType.USUAL]: Money.fromNumber(25000),
+            [P.PersonType.PENSIONER]: Money.fromNumber(25000),
+          },
+        },
+      ],
+      lectures: [
+        {
+          __typename: "LectureInfo",
+          id: "lecture-1",
+          date: Temporal.PlainDateTime.from({
+            year: 2023,
+            month: 2,
+            day: 23,
+          }),
+          enabled: false,
+          name: "Участие в Дхарма-программе",
+          price: {
+            [Tariff.BookingType]: Money.fromNumber(30000),
+            [Tariff.InPlaceType]: Money.fromNumber(60000),
+          },
+        },
+      ],
+    },
+    {
+      __typename: "DayInfo",
+      id: "day-5",
+      date: Temporal.PlainDate.from({
+        year: 2023,
+        month: 2,
+        day: 24,
+      }),
+      enabled: false,
+      price: {
+        [Tariff.BookingType]: Money.fromNumber(20000),
+        [Tariff.InPlaceType]: Money.fromNumber(20000),
+      },
+      eating: [
+        {
+          __typename: "EatingInfo",
+          id: "eating-1",
+          date: Temporal.PlainDateTime.from({
+            year: 2023,
+            month: 2,
+            day: 24,
+            hour: 8,
+          }),
+          enabled: false,
+          name: "Завтрак",
+          price: {
+            [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(10000),
+            [P.PersonType.CHILDREN_FROM_3_TO_7]: Money.fromNumber(10000),
+            [P.PersonType.CHILDREN_FROM_7_TO_18]: Money.fromNumber(15000),
+            [P.PersonType.STUDENT]: Money.fromNumber(15000),
+            [P.PersonType.USUAL]: Money.fromNumber(15000),
+            [P.PersonType.PENSIONER]: Money.fromNumber(15000),
+          },
+        },
+        {
+          __typename: "EatingInfo",
+          id: "eating-2",
+          date: Temporal.PlainDateTime.from({
+            year: 2023,
+            month: 2,
+            day: 24,
+            hour: 14,
+          }),
+          enabled: false,
+          name: "Oбед",
+          price: {
+            [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(15000),
+            [P.PersonType.CHILDREN_FROM_3_TO_7]: Money.fromNumber(15000),
+            [P.PersonType.CHILDREN_FROM_7_TO_18]: Money.fromNumber(30000),
+            [P.PersonType.STUDENT]: Money.fromNumber(30000),
+            [P.PersonType.USUAL]: Money.fromNumber(30000),
+            [P.PersonType.PENSIONER]: Money.fromNumber(30000),
+          },
+        },
+        {
+          __typename: "EatingInfo",
+          id: "eating-3",
+          date: Temporal.PlainDateTime.from({
+            year: 2023,
+            month: 2,
+            day: 24,
+            hour: 19,
+          }),
+          enabled: false,
+          name: "Ужин",
+          price: {
+            [P.PersonType.CHILDREN_BEFORE_3]: Money.fromNumber(10000),
+            [P.PersonType.CHILDREN_FROM_3_TO_7]: Money.fromNumber(10000),
+            [P.PersonType.CHILDREN_FROM_7_TO_18]: Money.fromNumber(25000),
+            [P.PersonType.STUDENT]: Money.fromNumber(25000),
+            [P.PersonType.USUAL]: Money.fromNumber(25000),
+            [P.PersonType.PENSIONER]: Money.fromNumber(25000),
+          },
+        },
+      ],
+      lectures: [
+        {
+          __typename: "LectureInfo",
+          id: "lecture-1",
+          date: Temporal.PlainDateTime.from({
+            year: 2023,
+            month: 2,
+            day: 24,
           }),
           enabled: false,
           name: "Участие в Дхарма-программе",
@@ -301,6 +487,3 @@ export const defaultState: CI.CourseInfo = {
     },
   ],
 };
-
-// накрутить 300 на орг взнос при оплате на месте
-// спонтакнные пенсионеры 50 процентов скидка
