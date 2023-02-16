@@ -3,6 +3,7 @@ import * as CI from "../domain/CourseInfo";
 import * as Tariff from "../domain/Tariff";
 import * as P from "../domain/Person";
 import { Temporal } from "@js-temporal/polyfill";
+import { pipe } from "fp-ts/lib/function";
 
 export const defaultState: CI.CourseInfo = {
   name: "Курс Нёндро",
@@ -51,6 +52,11 @@ export const defaultState: CI.CourseInfo = {
             [P.PersonType.STUDENT]: Money.fromNumber(15000),
             [P.PersonType.USUAL]: Money.fromNumber(15000),
             [P.PersonType.PENSIONER]: Money.fromNumber(15000),
+            [P.PersonType.COOK]: Money.zero(),
+            [P.PersonType.COOK_ASSISTANT]: pipe(
+              Money.fromNumber(15000),
+              Money.percents(70)
+            ),
           },
         },
         {
@@ -71,6 +77,11 @@ export const defaultState: CI.CourseInfo = {
             [P.PersonType.STUDENT]: Money.fromNumber(30000),
             [P.PersonType.USUAL]: Money.fromNumber(30000),
             [P.PersonType.PENSIONER]: Money.fromNumber(30000),
+            [P.PersonType.COOK]: Money.zero(),
+            [P.PersonType.COOK_ASSISTANT]: pipe(
+              Money.fromNumber(30000),
+              Money.percents(70)
+            ),
           },
         },
         {
@@ -91,6 +102,11 @@ export const defaultState: CI.CourseInfo = {
             [P.PersonType.STUDENT]: Money.fromNumber(25000),
             [P.PersonType.USUAL]: Money.fromNumber(25000),
             [P.PersonType.PENSIONER]: Money.fromNumber(25000),
+            [P.PersonType.COOK]: Money.zero(),
+            [P.PersonType.COOK_ASSISTANT]: pipe(
+              Money.fromNumber(25000),
+              Money.percents(70)
+            ),
           },
         },
       ],
@@ -144,6 +160,11 @@ export const defaultState: CI.CourseInfo = {
             [P.PersonType.STUDENT]: Money.fromNumber(15000),
             [P.PersonType.USUAL]: Money.fromNumber(15000),
             [P.PersonType.PENSIONER]: Money.fromNumber(15000),
+            [P.PersonType.COOK]: Money.zero(),
+            [P.PersonType.COOK_ASSISTANT]: pipe(
+              Money.fromNumber(15000),
+              Money.percents(70)
+            ),
           },
         },
         {
@@ -164,6 +185,11 @@ export const defaultState: CI.CourseInfo = {
             [P.PersonType.STUDENT]: Money.fromNumber(30000),
             [P.PersonType.USUAL]: Money.fromNumber(30000),
             [P.PersonType.PENSIONER]: Money.fromNumber(30000),
+            [P.PersonType.COOK]: Money.zero(),
+            [P.PersonType.COOK_ASSISTANT]: pipe(
+              Money.fromNumber(30000),
+              Money.percents(70)
+            ),
           },
         },
         {
@@ -184,6 +210,11 @@ export const defaultState: CI.CourseInfo = {
             [P.PersonType.STUDENT]: Money.fromNumber(25000),
             [P.PersonType.USUAL]: Money.fromNumber(25000),
             [P.PersonType.PENSIONER]: Money.fromNumber(25000),
+            [P.PersonType.COOK]: Money.zero(),
+            [P.PersonType.COOK_ASSISTANT]: pipe(
+              Money.fromNumber(25000),
+              Money.percents(70)
+            ),
           },
         },
       ],
@@ -238,6 +269,11 @@ export const defaultState: CI.CourseInfo = {
             [P.PersonType.STUDENT]: Money.fromNumber(15000),
             [P.PersonType.USUAL]: Money.fromNumber(15000),
             [P.PersonType.PENSIONER]: Money.fromNumber(15000),
+            [P.PersonType.COOK]: Money.zero(),
+            [P.PersonType.COOK_ASSISTANT]: pipe(
+              Money.fromNumber(15000),
+              Money.percents(70)
+            ),
           },
         },
         {
@@ -258,6 +294,11 @@ export const defaultState: CI.CourseInfo = {
             [P.PersonType.STUDENT]: Money.fromNumber(30000),
             [P.PersonType.USUAL]: Money.fromNumber(30000),
             [P.PersonType.PENSIONER]: Money.fromNumber(30000),
+            [P.PersonType.COOK]: Money.zero(),
+            [P.PersonType.COOK_ASSISTANT]: pipe(
+              Money.fromNumber(30000),
+              Money.percents(70)
+            ),
           },
         },
         {
@@ -278,6 +319,11 @@ export const defaultState: CI.CourseInfo = {
             [P.PersonType.STUDENT]: Money.fromNumber(25000),
             [P.PersonType.USUAL]: Money.fromNumber(25000),
             [P.PersonType.PENSIONER]: Money.fromNumber(25000),
+            [P.PersonType.COOK]: Money.zero(),
+            [P.PersonType.COOK_ASSISTANT]: pipe(
+              Money.fromNumber(25000),
+              Money.percents(70)
+            ),
           },
         },
       ],
@@ -331,6 +377,11 @@ export const defaultState: CI.CourseInfo = {
             [P.PersonType.STUDENT]: Money.fromNumber(15000),
             [P.PersonType.USUAL]: Money.fromNumber(15000),
             [P.PersonType.PENSIONER]: Money.fromNumber(15000),
+            [P.PersonType.COOK]: Money.zero(),
+            [P.PersonType.COOK_ASSISTANT]: pipe(
+              Money.fromNumber(15000),
+              Money.percents(70)
+            ),
           },
         },
         {
@@ -351,6 +402,11 @@ export const defaultState: CI.CourseInfo = {
             [P.PersonType.STUDENT]: Money.fromNumber(30000),
             [P.PersonType.USUAL]: Money.fromNumber(30000),
             [P.PersonType.PENSIONER]: Money.fromNumber(30000),
+            [P.PersonType.COOK]: Money.zero(),
+            [P.PersonType.COOK_ASSISTANT]: pipe(
+              Money.fromNumber(30000),
+              Money.percents(70)
+            ),
           },
         },
         {
@@ -371,6 +427,11 @@ export const defaultState: CI.CourseInfo = {
             [P.PersonType.STUDENT]: Money.fromNumber(25000),
             [P.PersonType.USUAL]: Money.fromNumber(25000),
             [P.PersonType.PENSIONER]: Money.fromNumber(25000),
+            [P.PersonType.COOK]: Money.zero(),
+            [P.PersonType.COOK_ASSISTANT]: pipe(
+              Money.fromNumber(25000),
+              Money.percents(70)
+            ),
           },
         },
       ],

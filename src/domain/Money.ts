@@ -26,6 +26,14 @@ export function div(divisor: number) {
   return (divisible: Money) =>
     pipe(decode(divisible).divide(divisor, "DOWN"), encode);
 }
+export function mul(mul: number) {
+  return (divisible: Money) =>
+    pipe(decode(divisible).multiply(mul, "DOWN"), encode);
+}
+
+export function percents(percents: number) {
+  return (divisible: Money) => pipe(divisible, div(100), mul(percents));
+}
 
 export function show(money: Money) {
   return decode(money).toFormat("0,0.00");

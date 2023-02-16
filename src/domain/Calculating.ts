@@ -11,6 +11,7 @@ enum ExpressionType {
   VALUE = "VALUE::ExpressionType",
   SUM = "SUM::ExpressionType",
   DIV = "DIV::ExpressionType",
+  MUL = "MUL::ExpressionType",
 }
 
 type Value = Readonly<{
@@ -46,7 +47,20 @@ export const div =
     divisor,
   });
 
-export type Calculating = Value | Sum | Div;
+type Mul = Readonly<{
+  type: ExpressionType.MUL;
+  multiply: Calculating;
+  multiplier: number;
+}>;
+export const mul =
+  (multiplier: number) =>
+  (multiply: Calculating): Mul => ({
+    type: ExpressionType.MUL,
+    multiplier,
+    multiply,
+  });
+
+export type Calculating = Value | Sum | Div | Mul;
 
 export const calculate = (expr: Calculating): Money.Money =>
   pipe(
@@ -63,6 +77,8 @@ export const calculate = (expr: Calculating): Money.Money =>
           ),
         [ExpressionType.DIV]: (x) =>
           pipe(calculate(x.divisible), Money.div(x.divisor)),
+        [ExpressionType.MUL]: (x) =>
+          pipe(calculate(x.multiply), Money.mul(x.multiplier)),
       })
     )
   );
@@ -74,6 +90,8 @@ const optimize = (expr: Calculating): O.Option<Calculating> =>
       [ExpressionType.VALUE]: (x) => O.some(x),
       [ExpressionType.DIV]: (x) =>
         pipe(optimize(x.divisible), O.map(div(x.divisor))),
+      [ExpressionType.MUL]: (x) =>
+        pipe(optimize(x.multiply), O.map(mul(x.multiplier))),
       [ExpressionType.SUM]: (x) =>
         pipe(
           x.summands,
@@ -96,6 +114,7 @@ export const show = (expr: Calculating): string =>
         [ExpressionType.SUM]: ({ summands }) =>
           `(${summands.map((x) => show(x)).join(" + ")})`,
         [ExpressionType.DIV]: (x) => `(${show(x.divisible)} / ${x.divisor})`,
+        [ExpressionType.MUL]: (x) => `(${show(x.multiply)} * ${x.multiplier})`,
       })
     )
   );

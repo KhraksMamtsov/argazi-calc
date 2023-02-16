@@ -7,6 +7,8 @@ export enum PersonType {
   PENSIONER = "PENSIONER::PersonType",
   USUAL = "USUAL::PersonType",
   STUDENT = "STUDENT::PersonType",
+  COOK = "COOK::PersonType",
+  COOK_ASSISTANT = "COOK_ASSISTANT::PersonType",
 }
 const DISCRIMINANT = "type";
 
@@ -22,13 +24,18 @@ export const childrenFrom7To18 = () => ({
 export const pensioner = () => ({ [DISCRIMINANT]: PersonType.PENSIONER });
 export const usual = () => ({ [DISCRIMINANT]: PersonType.USUAL });
 export const student = () => ({ [DISCRIMINANT]: PersonType.STUDENT });
+export const cook = () => ({ [DISCRIMINANT]: PersonType.COOK });
+export const cookAssistant = () => ({
+  [DISCRIMINANT]: PersonType.COOK_ASSISTANT,
+});
 
 export type ChildrenBefore3 = ReturnType<typeof childrenBefore3>;
 export type ChildrenFrom3To7 = ReturnType<typeof childrenFrom3To7>;
 export type ChildrenFrom7To18 = ReturnType<typeof childrenFrom7To18>;
 export type Pensioner = ReturnType<typeof pensioner>;
 export type Usual = ReturnType<typeof usual>;
-export type Student = ReturnType<typeof student>;
+export type Cook = ReturnType<typeof cook>;
+export type CookAssistant = ReturnType<typeof cookAssistant>;
 
 export type Person = typeof All[number];
 
@@ -39,6 +46,8 @@ export const All = [
   childrenBefore3(),
   childrenFrom3To7(),
   childrenFrom7To18(),
+  cook(),
+  cookAssistant(),
 ] as const;
 
 export const match = matchOn(DISCRIMINANT);
@@ -51,4 +60,6 @@ export const toView = (p: Person) =>
     [PersonType.PENSIONER]: "Пенсионер",
     [PersonType.USUAL]: "Обычный",
     [PersonType.STUDENT]: "Студент",
+    [PersonType.COOK]: "Главный повар",
+    [PersonType.COOK_ASSISTANT]: "Помощник повара (1,2,3 раза)",
   }[p.type]);

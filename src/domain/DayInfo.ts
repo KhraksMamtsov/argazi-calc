@@ -61,6 +61,16 @@ export function calculateTotal(args: CalculateArgs) {
   return pipe(
     person,
     P.match({
+      [P.PersonType.COOK]: () => lecturesTotalPrice,
+      [P.PersonType.COOK_ASSISTANT]: () =>
+        pipe(
+          [
+            lecturesTotalPrice,
+            eatingTotalPrice,
+            pipe(C.value(day.price[tariff.type]), C.div(100), C.mul(70)),
+          ],
+          C.sum
+        ),
       [P.PersonType.USUAL]: () => eatingLecturesAndDay,
       [P.PersonType.PENSIONER]: () => eatingLecturesAndDay,
       [P.PersonType.STUDENT]: () => eatingLecturesAndDay,
